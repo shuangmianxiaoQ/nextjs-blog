@@ -1,7 +1,7 @@
-import { format, parseISO } from 'date-fns';
+import dayjs from 'dayjs';
 
 export default function Date({ dateString }) {
-  const date = parseISO(dateString);
+  const formatDate = dayjs(dateString).format('MMMM D, YYYY');
 
-  return <time dateTime={dateString}>{format(date, 'LLLL d, yyyyy')}</time>;
+  return <time dateTime={dateString}>{formatDate}</time>;
 }
